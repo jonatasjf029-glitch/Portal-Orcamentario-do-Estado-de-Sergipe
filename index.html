@@ -52,7 +52,7 @@
     </div> <div id="tela-painel" style="display: none;">
         <header class="cabecalho-painel">
             <button class="btn-voltar" onclick="voltarMenu()">
-                ←   Voltar a Lista de Painéis
+                ←   Voltar à Lista de Painéis
             </button>
         </header>
         
@@ -64,16 +64,16 @@
 
    <script>
         function abrirPainel(url) {
-            // Esconde explicitamente os componentes principais do menu
+           
             document.querySelector('header:not(.cabecalho-painel)').style.display = 'none';
             document.querySelector('section').style.display = 'none';
             document.querySelector('main').style.display = 'none';
             
-            // Caso exista uma div englobando tudo, tenta esconder também
+           
             var telaInicial = document.getElementById('tela-inicial');
             if(telaInicial) telaInicial.style.display = 'none';
             
-            // Mostra o painel (usando flex para respeitar o flex-direction: column)
+            
             var telaPainel = document.getElementById('tela-painel');
             telaPainel.style.display = 'flex';
             
@@ -82,19 +82,19 @@
         }
 
         function voltarMenu() {
-            // Esconde o painel
+          
             document.getElementById('tela-painel').style.display = 'none';
             
-            // Restaura os componentes principais do menu
+           
             document.querySelector('header:not(.cabecalho-painel)').style.display = 'flex'; // Volta ao display original (flex)
             document.querySelector('section').style.display = 'block';
             document.querySelector('main').style.display = 'flex'; // Volta ao display original (flex)
             
-            // Se usou a div englobando tudo, restaura também
+            
             var telaInicial = document.getElementById('tela-inicial');
             if(telaInicial) telaInicial.style.display = 'block';
             
-            // Limpa o iframe
+          
             document.getElementById('iframe-powerbi').src = '';
         }
     </script>
